@@ -1,0 +1,1 @@
+Testing Tina and StrapiCMS
