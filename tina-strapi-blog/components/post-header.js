@@ -15,7 +15,7 @@ export default function PostHeader({ title, coverImage, date, author }) {
       <div className="hidden md:block md:mb-12">
         <Avatar
           name={author.name}
-          picture={process.env.STRAPI_URL + author.picture.url}
+          picture={process.env.NEXT_PUBLIC_STRAPI_URL + author.picture.url}
         />
       </div>
       <div className="mb-8 md:mb-16 sm:mx-0">
@@ -31,7 +31,7 @@ export default function PostHeader({ title, coverImage, date, author }) {
         <div className="block md:hidden mb-6">
           <Avatar
             name={author.name}
-            picture={process.env.STRAPI_URL + author.picture.url}
+            picture={process.env.NEXT_PUBLIC_STRAPI_URL + author.picture.url}
           />
         </div>
         <div className="mb-6 text-lg">

@@ -27,7 +27,7 @@ export default function PostPreview({
       <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
       <Avatar
         name={author.name}
-        picture={process.env.STRAPI_URL + author.picture.url}
+        picture={process.env.NEXT_PUBLIC_STRAPI_URL + author.picture.url}
       />
     </div>
   );
