@@ -33,24 +33,24 @@ const exitEditMode = () => {
 };
 
 export default function MyApp({ Component, pageProps }) {
-  const cms = useMemo(
-    () =>
-      new TinaCMS({
-        toolbar: pageProps.preview,
-        enabled: pageProps.preview,
-        apis: {
-          strapi: new StrapiClient(process.env.STRAPI_URL),
-        },
-        media: new StrapiMediaStore(process.env.STRAPI_URL),
-      }),
-    []
-  );
+  // const cms = useMemo(
+  //   () =>
+  //     new TinaCMS({
+  //       toolbar: pageProps.preview,
+  //       enabled: pageProps.preview,
+  //       apis: {
+  //         strapi: new StrapiClient(process.env.STRAPI_URL),
+  //       },
+  //       media: new StrapiMediaStore(process.env.STRAPI_URL),
+  //     }),
+  //   []
+  // );
   return (
-    <TinaProvider cms={cms}>
-      <StrapiProvider onLogin={enterEditMode} onLogout={exitEditMode}>
-        <EditButton />
-        <Component {...pageProps} />
-      </StrapiProvider>
-    </TinaProvider>
+    // <TinaProvider cms={cms}>
+    <StrapiProvider>
+      <EditButton />
+      <Component {...pageProps} />
+    </StrapiProvider>
+    // </TinaProvider>
   );
 }
