@@ -10,14 +10,14 @@ import { fetchGraphql } from "react-tinacms-strapi";
 
 //...
 
-export default function Index({ allPosts }) {
-  const heroPost = allPosts[0];
-  const morePosts = allPosts.slice(1);
+export default function Index() {
+  // const heroPost = allPosts[0];
+  // const morePosts = allPosts.slice(1);
   return (
     <>
       <Layout>
         <Head>
-          <title>Next.js Blog Example with {CMS_NAME}</title>
+          <title>Next.js Blog Example with </title>
         </Head>
       </Layout>
     </>
