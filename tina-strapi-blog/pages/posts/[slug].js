@@ -95,7 +95,7 @@ export default function Post({ post: initialPost, preview }) {
 
 export async function getStaticProps({ params, preview, previewData }) {
   const postResults = await fetchGraphql(
-    process.env.STRAPI_URL,
+    process.env.NEXT_PUBLIC_STRAPI_URL,
     `
     query{
       blogPosts(where: {slug: "${params.slug}"}){
@@ -143,7 +143,7 @@ export async function getStaticProps({ params, preview, previewData }) {
 
 export async function getStaticPaths() {
   const postResults = await fetchGraphql(
-    process.env.STRAPI_URL,
+    process.env.NEXT_PUBLIC_STRAPI_URL,
     `
     query{
       blogPosts{
