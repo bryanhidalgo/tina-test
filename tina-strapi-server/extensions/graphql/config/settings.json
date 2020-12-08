@@ -5,5 +5,5 @@
     "playgroundAlways": true,
     "depthLimit": 7,
     "amountLimit": 100,
-    "federation": false
+    "federation": true
   }
