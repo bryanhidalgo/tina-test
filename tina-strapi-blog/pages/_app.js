@@ -1,13 +1,13 @@
 import "../styles/index.css";
 
-import {
-  StrapiMediaStore,
-  StrapiProvider,
-  StrapiClient,
-} from "react-tinacms-strapi";
-import { TinaCMS, TinaProvider } from "tinacms";
-import { useCMS } from "@tinacms/react-core";
-import { useMemo } from "react";
+// import {
+//   StrapiMediaStore,
+//   StrapiProvider,
+//   StrapiClient,
+// } from "react-tinacms-strapi";
+// import { TinaCMS, TinaProvider } from "tinacms";
+// import { useCMS } from "@tinacms/react-core";
+// import { useMemo } from "react";
 
 // export const EditButton = () => {
 //   const cms = useCMS();
@@ -43,7 +43,7 @@ export default function MyApp({ Component, pageProps }) {
   //     }),
   //   []
   // );
-  console.log("My Strap is", process.env.NEXT_PUBLIC_STRAPI_URL);
+  console.log("My Strap is");
   return (
     <>
       {/* <StrapiProvider>
