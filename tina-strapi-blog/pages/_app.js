@@ -44,11 +44,11 @@ export default function MyApp({ Component, pageProps }) {
     []
   );
   return (
-    <TinaProvider cms={cms}>
-      <StrapiProvider onLogin={enterEditMode} onLogout={exitEditMode}>
-        <EditButton />
-        <Component {...pageProps} />
-      </StrapiProvider>
-    </TinaProvider>
+    <>
+      {/* <StrapiProvider>
+        <EditButton /> */}
+      <Component {...pageProps} />
+      {/* </StrapiProvider> */}
+    </>
   );
 }
