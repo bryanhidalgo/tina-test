@@ -13,54 +13,54 @@ import { useCMS, useForm, usePlugin } from "tinacms";
 import { InlineForm } from "react-tinacms-inline";
 
 export default function Post({ post: initialPost, preview }) {
-  // const cms = useCMS();
-  // const formConfig = {
-  //   id: initialPost.id,
-  //   label: "Blog Post",
-  //   initialValues: initialPost,
-  //   onSubmit: async (values) => {
-  //     const saveMutation = `
-  //     mutation UpdateBlogPost(
-  //       $id: ID!
-  //       $title: String
-  //       $content: String
-  //       $coverImageId: ID
-  //     ) {
-  //       updateBlogPost(
-  //         input: {
-  //           where: { id: $id }
-  //           data: { title: $title, content: $content, coverImage: $coverImageId}
-  //         }
-  //       ) {
-  //         blogPost {
-  //           id
-  //         }
-  //       }
-  //     }`;
-  //     const response = await cms.api.strapi.fetchGraphql(saveMutation, {
-  //       id: values.id,
-  //       title: values.title,
-  //       content: values.content,
-  //       coverImageId: values.coverImage.id,
-  //     });
-  //     if (response.data) {
-  //       cms.alerts.success("Changes Saved");
-  //     } else {
-  //       cms.alerts.error("Error saving changes");
-  //     }
-  //   },
-  //   fields: [],
-  // };
-  // const [post, form] = useForm(formConfig);
-  // usePlugin(form);
+  const cms = useCMS();
+  const formConfig = {
+    id: initialPost.id,
+    label: "Blog Post",
+    initialValues: initialPost,
+    onSubmit: async (values) => {
+      const saveMutation = `
+      mutation UpdateBlogPost(
+        $id: ID!
+        $title: String
+        $content: String
+        $coverImageId: ID
+      ) {
+        updateBlogPost(
+          input: {
+            where: { id: $id }
+            data: { title: $title, content: $content, coverImage: $coverImageId}
+          }
+        ) {
+          blogPost {
+            id
+          }
+        }
+      }`;
+      const response = await cms.api.strapi.fetchGraphql(saveMutation, {
+        id: values.id,
+        title: values.title,
+        content: values.content,
+        coverImageId: values.coverImage.id,
+      });
+      if (response.data) {
+        cms.alerts.success("Changes Saved");
+      } else {
+        cms.alerts.error("Error saving changes");
+      }
+    },
+    fields: [],
+  };
+  const [post, form] = useForm(formConfig);
+  usePlugin(form);
 
-  // const router = useRouter();
-  // if (!router.isFallback && !post?.slug) {
-  //   return <ErrorPage statusCode={404} />;
-  // }
+  const router = useRouter();
+  if (!router.isFallback && !post?.slug) {
+    return <ErrorPage statusCode={404} />;
+  }
   return (
     <Layout preview={preview}>
-      {/* <Container>
+      <Container>
         <Header />
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
@@ -88,7 +88,7 @@ export default function Post({ post: initialPost, preview }) {
             </article>
           </>
         )}
-      </Container> */}
+      </Container>
     </Layout>
   );
 }
