@@ -43,7 +43,7 @@ export default function MyApp({ Component, pageProps }) {
   //     }),
   //   []
   // );
-  console.log("My strapi", process.env.NEXT_PUBLIC_STRAPI_URL);
+  console.log("My Strap is", process.env.NEXT_PUBLIC_STRAPI_URL);
   return (
     <>
       {/* <StrapiProvider>
