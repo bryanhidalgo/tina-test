@@ -9,8 +9,6 @@ import { TinaCMS, TinaProvider } from "tinacms";
 import { useCMS } from "@tinacms/react-core";
 import { useMemo } from "react";
 
-// ...
-
 export const EditButton = () => {
   const cms = useCMS();
   return (
