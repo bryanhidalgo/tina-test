@@ -73,13 +73,17 @@ export default function Post({ post: initialPost, preview }) {
                 </title>
                 <meta
                   property="og:image"
-                  content={process.env.STRAPI_URL + post.coverImage.url}
+                  content={
+                    process.env.NEXT_PUBLIC_STRAPI_URL + post.coverImage.url
+                  }
                 />
               </Head>
               <InlineForm form={form} initialStatus={"active"}>
                 <PostHeader
                   title={post.title}
-                  coverImage={process.env.STRAPI_URL + post.coverImage.url}
+                  coverImage={
+                    process.env.NEXT_PUBLIC_STRAPI_URL + post.coverImage.url
+                  }
                   date={post.date}
                   author={post.author}
                 />

@@ -24,7 +24,9 @@ export default function Index({ allPosts }) {
           {heroPost && (
             <HeroPost
               title={heroPost.title}
-              coverImage={process.env.STRAPI_URL + heroPost.coverImage.url}
+              coverImage={
+                process.env.NEXT_PUBLIC_STRAPI_URL + heroPost.coverImage.url
+              }
               date={heroPost.date}
               author={heroPost.author}
               slug={heroPost.slug}
